@@ -200,7 +200,7 @@ namespace Service
         {
             //取得明細
             List < List<Model.Admin> > IDList= new List<List<Model.Admin>>();
-            //List<Model.Admin> DetailList = new List<Model.Admin>();
+            
             for(int i = 0; i < GetIDList.Count; i++)
             {
                 string sql_GetDetail = "select * from Books_Management bm join Order_Books ob on bm.Book_ID = ob.Book_ID where ob.Order_ID = '" +
@@ -335,8 +335,7 @@ namespace Service
         /// <returns></returns>
         public void Down(string isbn)
         {
-          /*  DataTable dt = new DataTable();
-            string find = "select * from Order_Books where Book_ID = '" + isbn + "';";*/
+          
 
 
             string sql = "delete  from dbo.Order_Books where Book_ID = '" + isbn + 
@@ -347,15 +346,13 @@ namespace Service
             using (conn)
             {
                 conn.Open();
-                /* SqlCommand cmd = new SqlCommand(find, conn);
-                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
-                 sqlAdapter.Fill(dt);*/
+                
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();                
                 conn.Close();
             }
-            //Find_Order_ID(dt);
+            
         }
 
 

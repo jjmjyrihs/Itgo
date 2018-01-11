@@ -35,7 +35,7 @@ namespace Service
                     cmd_insert.ExecuteNonQuery();
                 }catch(Exception e)
                 {
-                    
+                    conn.Close();
                 }
                 conn.Close();
             }
