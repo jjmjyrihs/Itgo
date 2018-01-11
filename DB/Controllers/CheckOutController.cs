@@ -34,7 +34,7 @@ namespace DB.Controllers
                 Data[book].Order_Quantity = Order_Quantity;
             }catch(Exception e)
             {
-                return RedirectToAction("NonBook", "CheckOut");
+                Data[book].Order_Quantity = Order_Quantity;
             }            
             ViewBag.result = Data;
             if (Data.Count == 0)

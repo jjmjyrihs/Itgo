@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DB.Controllers
 {
-    public class OrderSearchController : Controller
+    public class Order_SearchController : Controller
     {
         // GET: Order_Search
         public ActionResult Index()

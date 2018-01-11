@@ -115,8 +115,8 @@ namespace DB.Controllers
             GetHomeData();
            List<List<Model.Admin>> GetSaleList = new List<List<Model.Admin>>();
             List<List<Model.Admin>> GetAllCompleteSaleList = new List<List<Model.Admin>>();
-            GetSaleList =  SAGD.GetSaleList(false);
-            GetAllCompleteSaleList = SAGD.GetSaleList(true);
+            GetSaleList =  SAGD.GetSaleList((bool)false);
+            GetAllCompleteSaleList = SAGD.GetSaleList((bool)true);
             if (GetSaleList == null)
             {
                 return RedirectToAction("SaleList", "Admin");
