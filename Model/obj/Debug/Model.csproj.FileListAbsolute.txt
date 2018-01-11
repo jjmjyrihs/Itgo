@@ -1,0 +1,4 @@
+D:\Users\IDIC\Desktop\DB-master\DB\Model\bin\Debug\Model.dll
+D:\Users\IDIC\Desktop\DB-master\DB\Model\bin\Debug\Model.pdb
+D:\Users\IDIC\Desktop\DB-master\DB\Model\obj\Debug\Model.dll
+D:\Users\IDIC\Desktop\DB-master\DB\Model\obj\Debug\Model.pdb
