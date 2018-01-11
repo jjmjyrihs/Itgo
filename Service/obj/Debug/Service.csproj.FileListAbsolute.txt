@@ -1,0 +1,7 @@
+D:\Users\IDIC\Desktop\DB-master\DB\Service\bin\Debug\Service.dll
+D:\Users\IDIC\Desktop\DB-master\DB\Service\bin\Debug\Service.pdb
+D:\Users\IDIC\Desktop\DB-master\DB\Service\bin\Debug\Model.dll
+D:\Users\IDIC\Desktop\DB-master\DB\Service\bin\Debug\Model.pdb
+D:\Users\IDIC\Desktop\DB-master\DB\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\Users\IDIC\Desktop\DB-master\DB\Service\obj\Debug\Service.dll
+D:\Users\IDIC\Desktop\DB-master\DB\Service\obj\Debug\Service.pdb
