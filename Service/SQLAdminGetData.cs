@@ -23,7 +23,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 sqlAdapter.Fill(dt);
                 conn.Close();
             }
@@ -113,7 +113,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd_sql_ID = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_sql_ID);
                 cmd_sql_ID.ExecuteNonQuery();
             }
             return Order_ID;
@@ -132,7 +132,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -152,9 +152,9 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd_Update_Stock = new SqlCommand(sql_Update_Stock, conn);
-                
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_Update_Stock);
                 SqlCommand cmd_Update_Processing_Static = new SqlCommand(sql_Update_Processing_Static, conn);
-                
+                SqlDataAdapter sqlAdapter_sql_2 = new SqlDataAdapter(cmd_Update_Processing_Static);
                 cmd_Update_Stock.ExecuteNonQuery();
                 cmd_Update_Processing_Static.ExecuteNonQuery();
                 conn.Close();
@@ -185,7 +185,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql_GetID, conn);
-                
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 sqlAdapter.Fill(dt);
                 conn.Close();
             }
@@ -211,7 +211,7 @@ namespace Service
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(sql_GetDetail, conn);
-                    
+                    SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                     sqlAdapter.Fill(dt);
                     conn.Close();
                 }
@@ -225,7 +225,7 @@ namespace Service
                     {
                         conn.Open();
                         SqlCommand cmd = new SqlCommand(sql, conn);
-                        
+                        SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                         cmd.ExecuteNonQuery();
                         conn.Close();
                     }
@@ -296,7 +296,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql_set, conn);
-                
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -352,7 +352,7 @@ namespace Service
                 cmd.ExecuteNonQuery();                
                 conn.Close();
             }
-            
+            //Find_Order_ID(dt);
         }
 
 
@@ -374,7 +374,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();               
                 conn.Close();
             }

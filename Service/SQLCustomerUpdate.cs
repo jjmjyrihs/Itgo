@@ -34,7 +34,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }

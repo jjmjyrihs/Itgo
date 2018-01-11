@@ -29,7 +29,7 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd_insert = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter_check = new SqlDataAdapter(cmd_insert);
                 try
                 {
                     cmd_insert.ExecuteNonQuery();

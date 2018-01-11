@@ -36,7 +36,7 @@ namespace Service
                     
                     SqlCommand cmd = new SqlCommand(set_Sql, conn);
                     // cmd.Parameters.Add(new SqlParameter(@a, SqlDbType.Int))
-                    
+                    SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     return Email;

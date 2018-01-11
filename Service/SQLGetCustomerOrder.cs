@@ -35,7 +35,7 @@ namespace Service
                 }
                 catch (Exception e)
                 {
-                    conn.Close();
+
                 }
                 conn.Close();
             }

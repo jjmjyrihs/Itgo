@@ -18,14 +18,14 @@ namespace Service
             {
                 conn.Open();
                 SqlCommand cmd_sql = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_sql);
                 try
                 {
                     cmd_sql.ExecuteNonQuery();
                 }
                 catch (Exception e)
                 {
-                    conn.Close();
+
                 }
                 conn.Close();
             }

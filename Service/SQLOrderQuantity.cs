@@ -18,9 +18,11 @@ namespace Service
             using (conn)
             {
                 conn.Open();
-              
+              /*  SqlCommand cmd = new SqlCommand(sql_setID, conn);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
+                cmd.ExecuteNonQuery();*/
                 SqlCommand cmd_sql = new SqlCommand(sql, conn);
-                
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_sql);
                 try
                 {
                     cmd_sql.ExecuteNonQuery();

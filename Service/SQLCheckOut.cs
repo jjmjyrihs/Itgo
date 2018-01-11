@@ -25,11 +25,13 @@ namespace Service
             using (conn)
             {
                 conn.Open();
-                
+                /*  SqlCommand cmd = new SqlCommand(sql_setID, conn);
+                  SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
+                  cmd.ExecuteNonQuery();*/
                 SqlCommand cmd_sql_ID = new SqlCommand(sql_ID, conn);
                 SqlCommand cmd_sql = new SqlCommand(sql, conn);
-                
-                
+                SqlDataAdapter sqlAdapter_sql_ID = new SqlDataAdapter(cmd_sql_ID);
+                SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_sql);
                 try
                 {
                     cmd_sql_ID.ExecuteNonQuery();
@@ -37,7 +39,7 @@ namespace Service
                 }
                 catch (Exception e)
                 {
-                    conn.Close();
+
                 }
                 conn.Close();
             }
@@ -58,9 +60,9 @@ namespace Service
                 {
                     conn.Open();
                     SqlCommand cmd_sql = new SqlCommand(sql, conn);
-                    
+                    SqlDataAdapter sqlAdapter_sql = new SqlDataAdapter(cmd_sql);
                     SqlCommand cmd_update = new SqlCommand(sql_update, conn);
-                    
+                    SqlDataAdapter sqlAdapter_sql_update = new SqlDataAdapter(cmd_update);
                     try
                     {
                         cmd_update.ExecuteNonQuery();
@@ -68,7 +70,7 @@ namespace Service
                     }
                     catch (Exception e)
                     {
-                        conn.Close();
+
                     }
                     conn.Close();
                 }
