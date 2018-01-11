@@ -8,7 +8,7 @@ namespace DB.Controllers
 {
     public class AdminController : Controller
     {
-        Service.SQL_AdminGetData SAGD = new Service.SQL_AdminGetData();
+        Service.SQLAdminGetData SAGD = new Service.SQLAdminGetData();
         // GET: Admin
         public ActionResult Index()
         {
@@ -115,8 +115,8 @@ namespace DB.Controllers
             GetHomeData();
            List<List<Model.Admin>> GetSaleList = new List<List<Model.Admin>>();
             List<List<Model.Admin>> GetAllCompleteSaleList = new List<List<Model.Admin>>();
-            GetSaleList =  SAGD.GetSaleList((bool)false);
-            GetAllCompleteSaleList = SAGD.GetSaleList((bool)true);
+            GetSaleList =  SAGD.GetSaleList(false);
+            GetAllCompleteSaleList = SAGD.GetSaleList(true);
             if (GetSaleList == null)
             {
                 return RedirectToAction("SaleList", "Admin");
@@ -141,7 +141,7 @@ namespace DB.Controllers
         public ActionResult Book_Management()
         {
             GetHomeData();
-            Service.SQL_Inquire SI = new Service.SQL_Inquire();
+            Service.SQLInquire SI = new Service.SQLInquire();
             List<Model.BookData> Data = new List<Model.BookData>();
             Data = SI.Find("", true);
             ViewBag.AllBooks = Data;

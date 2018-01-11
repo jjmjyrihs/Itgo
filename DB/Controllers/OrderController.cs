@@ -16,14 +16,14 @@ namespace DB.Controllers
 
         public ActionResult Insert(Model.CustomerOrder Data,string  Order_ID)
         {
-            Service.SQL_CheckOut SCO = new Service.SQL_CheckOut();
+            Service.SQLCheckOut SCO = new Service.SQLCheckOut();
             Data.Customer_Email = Request.Cookies["cookie"]["Account"].ToString();
             SCO.InsertCustomer_Order(Data);
-            Service.SQL_GetShoppingCart SGSC = new Service.SQL_GetShoppingCart();
+            Service.SQLGetShoppingCart SGSC = new Service.SQLGetShoppingCart();
             List<Model.ShippingCar> Data2 = new List<Model.ShippingCar>();
             Data2  = SGSC.Find(Data.Customer_Email);
             SCO.InsertOrder_Books(Data, Data2);
-            Service.SQL_DeleteShoppingCart SDSC = new Service.SQL_DeleteShoppingCart();
+            Service.SQLDeleteShoppingCart SDSC = new Service.SQLDeleteShoppingCart();
             SDSC.Delete_Cart();
             return RedirectToAction("Index","DataShow",new { Order_ID=Order_ID});
         }

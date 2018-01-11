@@ -24,7 +24,7 @@ namespace DB.Controllers
                 return RedirectToAction("RedirectToLogin", "Login");
             }
             
-            Service.SQL_GetShoppingCart SCO = new Service.SQL_GetShoppingCart();
+            Service.SQLGetShoppingCart SCO = new Service.SQLGetShoppingCart();
             List<Model.ShippingCar> Data = new List<Model.ShippingCar>();
             Data = SCO.Find(Customer_Email);
 
@@ -34,7 +34,7 @@ namespace DB.Controllers
                 Data[book].Order_Quantity = Order_Quantity;
             }catch(Exception e)
             {
-               
+                return RedirectToAction("NonBook", "CheckOut");
             }            
             ViewBag.result = Data;
             if (Data.Count == 0)

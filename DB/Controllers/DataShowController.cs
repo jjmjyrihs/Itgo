@@ -16,9 +16,9 @@ namespace DB.Controllers
             List<Model.CustomerOrder> Customer_Order = new List<Model.CustomerOrder>();
             List<Model.ShowBook> Book_Data = new List<Model.ShowBook>();
 
-            Service.SQL_CustomerData SCD = new Service.SQL_CustomerData();
-            Service.SQL_GetCustomerOrder SGCO = new Service.SQL_GetCustomerOrder();
-            Service.SQL_GetShowBook SGSB = new Service.SQL_GetShowBook();
+            Service.SQLCustomerData SCD = new Service.SQLCustomerData();
+            Service.SQLGetCustomerOrder SGCO = new Service.SQLGetCustomerOrder();
+            Service.SQLGetShowBook SGSB = new Service.SQLGetShowBook();
 
             Customer_Data = SCD.getData(Request.Cookies["cookie"]["Account"].ToString());
             Customer_Order = SGCO.Get_Customer_Order(Order_ID,Customer_Data.Customer_Email);
@@ -31,7 +31,7 @@ namespace DB.Controllers
             }
             ViewBag.Book_Data = Book_Data;
             ViewBag.Price_Total = Total;
-            Service.SQL_DeleteShoppingCart SDSC = new Service.SQL_DeleteShoppingCart();
+            Service.SQLDeleteShoppingCart SDSC = new Service.SQLDeleteShoppingCart();
             SDSC.Delete_Cart();
             return View();
         }

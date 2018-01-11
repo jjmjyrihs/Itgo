@@ -29,7 +29,7 @@ namespace DB.Controllers
 
         public ActionResult Check_Login(Model.CustomerData Cusdata)
         {
-            Service.SQL_CustomerCheck SAC = new Service.SQL_CustomerCheck();
+            Service.SQLCustomerCheck SAC = new Service.SQLCustomerCheck();
             List<Model.CustomerData> Data = new List<Model.CustomerData>();
             Data = SAC.Check(Cusdata);
             if (Data.Count > 0)

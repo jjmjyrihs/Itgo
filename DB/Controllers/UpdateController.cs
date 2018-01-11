@@ -12,7 +12,7 @@ namespace DB.Controllers
         public ActionResult Index()
         {
             string Account="";
-            Service.SQL_CustomerData SSC = new Service.SQL_CustomerData();
+            Service.SQLCustomerData SSC = new Service.SQLCustomerData();
             Model.CustomerData Data = new Model.CustomerData();
             if (Request.Cookies["cookie"] == null)
             {
@@ -30,7 +30,7 @@ namespace DB.Controllers
 
         public ActionResult Update(Model.CustomerData Data)
         {
-            Service.SQL_CustomerUpdate SCU = new Service.SQL_CustomerUpdate();
+            Service.SQLCustomerUpdate SCU = new Service.SQLCustomerUpdate();
             Boolean Check = false;
             Check = SCU.Update(Data);
             if (Check)

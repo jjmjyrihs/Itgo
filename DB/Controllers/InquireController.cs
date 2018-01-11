@@ -13,7 +13,7 @@ namespace DB.Controllers
         public ActionResult Index(Model.BookData listdata)
         {
 
-            Service.SQL_Inquire SSI = new Service.SQL_Inquire();
+            Service.SQLInquire SSI = new Service.SQLInquire();
             List<Model.BookData> Data = new List<Model.BookData>();
             if (listdata.Book_Search == null)
             {

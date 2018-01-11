@@ -38,7 +38,7 @@ namespace DB.Controllers
                     return RedirectToAction("index", "Login");
                 case "註冊":
                     HttpCookie cook = new HttpCookie("cookie");
-                    Service.SQL_Registered SSR = new Service.SQL_Registered();
+                    Service.SQLRegistered SSR = new Service.SQLRegistered();
                     List<Model.CustomerData> Data = new List<Model.CustomerData>();
                     string get_mail  = SSR.Regis(CusData);
                     cook["Account"] =get_mail;

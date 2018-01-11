@@ -41,7 +41,7 @@ namespace DB.Controllers
 
         public ActionResult InsertBook_Quantity(string Book_ID, string GetOrder_Quantity, string Order_ID, string Book_ID2,string SubTotal)
         {
-            Service.SQL_OrderQuantity SOQ = new Service.SQL_OrderQuantity();
+            Service.SQLOrderQuantity SOQ = new Service.SQLOrderQuantity();
             SOQ.InsertBook_Quantity(Book_ID, GetOrder_Quantity, Order_ID);
             int Order_Quantity = int.Parse(GetOrder_Quantity);
             if (Order_Quantity == 0)
